@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mwave — spotify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div class="glow"></div>
+
+  <nav class="nav">
+    <div class="brand"><div class="pill">mw</div><span>mwave</span></div>
+    <div class="links">
+      <a href="index.html">home</a>
+      <a href="discord.html">discord</a>
+      <a href="projetos.html">projetos</a>
+      <a href="setup.html">setup</a>
+      <a href="amigos.html">amigos</a>
+      <a href="spotify.html">spotify</a>
+    </div>
+  </nav>
+
+  <main class="content" id="spotify">
+    <h1>🎵 Spotify</h1>
+    <p style="color:var(--muted)">O que estou a ouvir neste momento:</p>
+    <a href="https://discord.com/users/828635911700873267" target="_blank">
+      <img
+        src="https://lanyard.cnrad.dev/api/828635911700873267?bg=1A1C1F&borderRadius=12px&idleMessage=n%C3%A3o%20estou%20ouvindo%20nada....&theme=dark&showDisplayName=true"
+        alt="Spotify Status"
+        style="margin-top:20px;width:100%;max-width:480px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,.4)"
+      />
+    </a>
+  </main>
+
+  <footer>© <span id="year"></span> mwave — feito com amor e café ☕</footer>
+  <script src="script.js"></script>
+  <div id="cursor"></div>
+</body>
+</html>
