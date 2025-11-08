@@ -99,3 +99,56 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+// ====== Typing Effect no TÍTULO da aba ======
+const frasesTitle = ['mwave', 'rei delas', 'comedor de coroa'];
+let iTitle = 0;
+let jTitle = 0;
+let apagandoTitle = false;
+
+function animarTitulo() {
+  const frase = frasesTitle[iTitle % frasesTitle.length];
+  if (!apagandoTitle) {
+    // escrever
+    document.title = frase.substring(0, jTitle + 1);
+    jTitle++;
+    if (jTitle === frase.length) {
+      apagandoTitle = true;
+      return setTimeout(animarTitulo, 1500); // pausa ao terminar
+    }
+    setTimeout(animarTitulo, 180); // velocidade de digitação
+  } else {
+    // apagar
+    document.title = frase.substring(0, jTitle - 1);
+    jTitle--;
+    if (jTitle === 0) {
+      apagandoTitle = false;
+      iTitle++;
+      return setTimeout(animarTitulo, 70); // pausa antes de recomeçar
+    }
+    setTimeout(animarTitulo, 130); // velocidade de apagar
+  }
+}
+
+// iniciar ao carregar a página
+window.addEventListener("load", animarTitulo);
+
+// ====== Intro screen ======
+const intro = document.getElementById('intro');
+
+intro.addEventListener('click', () => {
+  // adicionar animação de fade-out
+  intro.classList.add('hide');
+
+  // tocar som "woosh suave"
+  const audio = new Audio('assets/sound.mp3');
+  audio.volume = 0.4;
+  audio.play().catch(() => console.warn("Som bloqueado até interação do utilizador."));
+
+  // adicionar fade-in ao body
+  document.body.classList.add('loaded');
+
+  // remover o intro após a animação
+  setTimeout(() => intro.remove(), 1500);
+});

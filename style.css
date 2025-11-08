@@ -358,4 +358,38 @@ body.loading {
   pointer-events: none;
 }
 
+/* ===== INTRO SCREEN ===== */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, filter 1s ease-in-out;
+}
+
+#intro.hide {
+  opacity: 0;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+#intro h1 {
+  animation: blink 1.4s infinite alternate;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.4; }
+}
+
+
+
 
